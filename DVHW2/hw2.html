@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2 Solution</title>
+    <style>
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .info {
+            margin-bottom: 10px;
+            padding: 1px;
+        }
+
+        .info h2 {
+            text-align: center;
+        }
+
+        .info span {
+            display: inline-block;
+
+            padding: 1px;
+            margin: 5px 10%;
+        }
+
+        .info p {
+            text-align: center;
+        }
+
+        .dataset {
+            text-align: center;
+        }
+
+        .barChart rect {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 1px;
+        }
+
+        .lineChart path {
+            fill: none;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .lineChart circle {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            visibility: hidden;
+        }
+
+        .lineChart:hover circle {
+            visibility: visible;
+        }
+
+        .areaChart path {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .areaChart circle {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            visibility: hidden;
+        }
+
+        .areaChart:hover circle {
+            visibility: visible;
+        }
+
+        .scatterplot circle {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        div.charts {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            text-align: center;
+            width: auto;
+        }
+
+        div.chart {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+
+            margin: 5px auto;
+            padding: 5px;
+
+            display: inline-block;
+            width: fit-content;
+        }
+
+        div.chart h2 {
+            text-align: center;
+        }
+
+        rect.frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        rect.frame:hover {
+            fill: none;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        #tooltip {
+            position: absolute;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            background-color: white;
+            pointer-events: none;
+            border: 1px solid black;
+        }
+
+        #tooltip.hidden {
+            display: none;
+        }
+
+        #tooltip p {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+    </style>
+
+    <!-- Include the D3 library and your script file here -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./script.js"></script>
+
+</head>
+
+<body>
+    <section class="info">
+        <h2>90529 Data Visualisation - Homework 2</h2>
+        <div>
+            <p>
+                <span>Patryk Jan Sozanski</span>
+                <span>patryk.sozanski.stud@pw.edu.pl</span>
+                <span>S5089822</span>
+            </p>
+        </div>
+        <hr>
+    </section>
+
+    <section class="dataset">
+        <br>
+        <span>
+            <label for="dataset">Dataset:</label>
+            <select id="dataset">
+                <option value="anscombe_I">Anscombe's Quartet I</option>
+                <option value="anscombe_II">Anscombe's Quartet II</option>
+                <option value="anscombe_III">Anscombe's Quartet III</option>
+                <option value="anscombe_IV">Anscombe's Quartet IV</option>
+            </select>
+        </span>
+        <span>
+            <input type="checkbox" id="random"> Random Subset
+        </span>
+        <br>
+        <br>
+    </section>
+
+    <section>
+        <div class="charts">
+            <div class="chart">
+                <h2>Bar Charts</h2>
+                <svg id="bc1" class="barChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+
+                <svg id="bc2" class="barChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h2>Line Charts</h2>
+                <svg id="lc1" class="lineChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+
+                <svg id="lc2" class="lineChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h2>Area Charts</h2>
+                <svg id="ac1" class="areaChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+
+                <svg id="ac2" class="areaChart" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h2>Scatterplot</h2>
+                <svg id="sp" class="scatterplot" height="206" width="206">
+                    <g>
+                        <rect x="0" y="0" height="206" width="206" class="frame"></rect>
+                    </g>
+                    <!-- Paste your HW 1 solution here -->
+                </svg>
+            </div>
+            <div id="tooltip" class="hidden">
+                <p><strong>Coordinates:</strong></p>
+                <p>
+                    <span id="xCoordinate">0</span>
+                    <br>
+                    <span id="yCoordinate">0</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

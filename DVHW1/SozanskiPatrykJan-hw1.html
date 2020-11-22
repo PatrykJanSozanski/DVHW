@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1</title>
+    <style>
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .info {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            margin-bottom: 10px;
+            padding: 1px;
+        }
+
+        .info h2 {
+            text-align: center;
+        }
+
+        .info span {
+            display: inline-block;
+
+            padding: 1px;
+            margin: 5px 10%;
+        }
+
+        .info p {
+            text-align: center;
+        }
+
+        .barChart rect {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 1px;
+        }
+
+        .barChart rect:hover {
+            fill: royalblue;
+        }
+
+        .lineChart polyline {
+            fill: none;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .lineChart circle {
+            fill: deepskyblue;
+            visibility: hidden;
+        }
+
+        .lineChart:hover circle {
+            visibility: visible;
+        }
+
+        .lineChart circle:hover {
+            stroke: royalblue;
+            stroke-width: 5px;
+        }
+
+        .areaChart path {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .areaChart path:hover {
+            fill: royalblue;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .areaChart circle {
+            fill: deepskyblue;
+            visibility: hidden;
+        }
+
+        .areaChart:hover circle {
+            visibility: visible;
+        }
+
+        .areaChart circle:hover {
+            stroke: royalblue;
+            stroke-width: 5px;
+        }
+
+        .scatterplot circle {
+            fill: lightskyblue;
+            stroke: deepskyblue;
+            stroke-width: 2px;
+        }
+
+        .scatterplot circle:hover {
+            stroke: royalblue;
+            stroke-width: 6px;
+        }
+
+        div.charts {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            text-align: center;
+            width: auto;
+        }
+
+        div.chart {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+
+            margin: 5px auto;
+            padding: 5px;
+
+            display: inline-block;
+            width: fit-content;
+        }
+
+        div.chart h3 {
+            text-align: center;
+        }
+
+        rect.frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        rect.frame:hover {
+            fill: none;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="info">
+        <h2>90529 Data Visualisation - Homework 1</h2>
+        <div>
+            <p>
+                <span>Patryk Jan Sozanski</span><span>patryk.sozanski.stud@pw.edu.pl</span><span>S5089822</span>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="charts">
+            <div class="chart">
+                <h3>Bar Charts</h3>
+                <svg id="bc1" class="barChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <rect x="0.0"   y="3.0"     height="18.18"     width="100.0"/>
+                        <rect x="0.0"   y="21.18"   height="18.18"     width="80.0"/>
+                        <rect x="0.0"   y="39.36"   height="18.18"     width="130.0"/>
+                        <rect x="0.0"   y="57.54"   height="18.18"     width="90.0"/>
+                        <rect x="0.0"   y="75.72"   height="18.18"     width="110.0"/>
+                        <rect x="0.0"   y="93.90"   height="18.18"     width="140.0"/>
+                        <rect x="0.0"   y="112.08"  height="18.18"     width="60.0"/>
+                        <rect x="0.0"   y="130.26"  height="18.18"     width="40.0"/>
+                        <rect x="0.0"   y="148.44"  height="18.18"     width="120.0"/>
+                        <rect x="0.0"   y="166.62"  height="18.18"     width="70.0"/>
+                        <rect x="0.0"   y="184.80"  height="18.18"     width="50.0"/>
+                        <rect x="0.0"   y="0.0"     height="206.0"     width="206.0" class="frame"/>
+                    </g>
+                </svg>
+
+                <svg id="bc2" class="barChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <rect x="0.0"   y="3.00"    height="18.18"   width="80.4"/>
+                        <rect x="0.0"   y="21.18"   height="18.18"   width="69.5"/>
+                        <rect x="0.0"   y="39.36"   height="18.18"   width="75.8"/>
+                        <rect x="0.0"   y="57.54"   height="18.18"   width="88.1"/>
+                        <rect x="0.0"   y="75.72"   height="18.18"   width="83.3"/>
+                        <rect x="0.0"   y="93.90"   height="18.18"   width="99.6"/>
+                        <rect x="0.0"   y="112.08"  height="18.18"   width="72.4"/>
+                        <rect x="0.0"   y="130.26"  height="18.18"   width="42.6"/>
+                        <rect x="0.0"   y="148.44"  height="18.18"   width="108.4"/>
+                        <rect x="0.0"   y="166.62"  height="18.18"   width="48.2"/>
+                        <rect x="0.0"   y="184.80"  height="18.18"   width="56.8"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h3>Line Charts</h3>
+                <svg id="lc1" class="lineChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <polyline points="3.0,100.0 23.0,80.0 43.0,130.0 63.0,90.0 83.0,110.0 103.0,140.0 123.0,60.0 143.0,40.0 163.0,120.0 183.0,70.0 203.0,50.0"/>
+                        <circle cx="3.0"    cy="100.0"  r="2"/>
+                        <circle cx="23.0"   cy="80.0"   r="2"/>
+                        <circle cx="43.0"   cy="130.0"  r="2"/>
+                        <circle cx="63.0"   cy="90.0"   r="2"/>
+                        <circle cx="83.0"   cy="110.0"  r="2"/>
+                        <circle cx="103.0"  cy="140.0"  r="2"/>
+                        <circle cx="123.0"  cy="60.0"   r="2"/>
+                        <circle cx="143.0"  cy="40.0"   r="2"/>
+                        <circle cx="163.0"  cy="120.0"  r="2"/>
+                        <circle cx="183.0"  cy="70.0"   r="2"/>
+                        <circle cx="203.0"  cy="50.0"   r="2"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+
+                <svg id="lc2" class="lineChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <polyline points="3.0,80.4 23.0,69.5 43.0,75.8 63.0,88.1 83.0,83.3 103.0,99.6 123.0,72.4 143.0,42.6 163.0,108.4 183.0,48.2 203.0,56.8"/>
+                        <circle cx="3.0"    cy="80.4"   r="2"/>
+                        <circle cx="23.0"   cy="69.5"   r="2"/>
+                        <circle cx="43.0"   cy="75.8"   r="2"/>
+                        <circle cx="63.0"   cy="88.1"   r="2"/>
+                        <circle cx="83.0"   cy="83.3"   r="2"/>
+                        <circle cx="103.0"  cy="99.6"   r="2"/>
+                        <circle cx="123.0"  cy="72.4"   r="2"/>
+                        <circle cx="143.0"  cy="42.6"   r="2"/>
+                        <circle cx="163.0"  cy="108.4"  r="2"/>
+                        <circle cx="183.0"  cy="48.2"   r="2"/>
+                        <circle cx="203.0"  cy="56.8"   r="2"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h3>Area Charts</h3>
+                <svg id="ac1" class="areaChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <path d="M 3.0 0.0 L 3.0 100.0 L 23.0 80.0 L 43.0 130.0 L 63.0 90.0 L 83.0 110.0 L 103.0 140.0 L 123.0 60.0 L 143.0 40.0 L 163.0 120.0 L 183.0 70.0 L 203.0 50.0 L 203.0 0.0 Z"/>
+                        <circle cx="3.0"    cy="100.0"  r="2"/>
+                        <circle cx="23.0"   cy="80.0"   r="2"/>
+                        <circle cx="43.0"   cy="130.0"  r="2"/>
+                        <circle cx="63.0"   cy="90.0"   r="2"/>
+                        <circle cx="83.0"   cy="110.0"  r="2"/>
+                        <circle cx="103.0"  cy="140.0"  r="2"/>
+                        <circle cx="123.0"  cy="60.0"   r="2"/>
+                        <circle cx="143.0"  cy="40.0"   r="2"/>
+                        <circle cx="163.0"  cy="120.0"  r="2"/>
+                        <circle cx="183.0"  cy="70.0"   r="2"/>
+                        <circle cx="203.0"  cy="50.0"   r="2"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+
+                <svg id="ac2" class="areaChart" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <path d="M 3.0 0.0 L 3.0 80.4 L 23.0 69.5 L 43.0 75.8 L 63.0 88.1 L 83.0 83.3  L 103.0 99.6 L 123.0 72.4 L 143.0 42.6 L 163.0 108.4 L 183.0 48.2 L 203.0 56.8 L 203.0 0.0 Z"/>
+                        <circle cx="3.0"    cy="80.4"   r="2"/>
+                        <circle cx="23.0"   cy="69.5"   r="2"/>
+                        <circle cx="43.0"   cy="75.8"   r="2"/>
+                        <circle cx="63.0"   cy="88.1"   r="2"/>
+                        <circle cx="83.0"   cy="83.3"   r="2"/>
+                        <circle cx="103.0"  cy="99.6"   r="2"/>
+                        <circle cx="123.0"  cy="72.4"   r="2"/>
+                        <circle cx="143.0"  cy="42.6"   r="2"/>
+                        <circle cx="163.0"  cy="108.4"  r="2"/>
+                        <circle cx="183.0"  cy="48.2"   r="2"/>
+                        <circle cx="203.0"  cy="56.8"   r="2"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="chart">
+                <h3>Scatterplot</h3>
+                <svg id="sp" class="scatterplot" height="206" width="206">
+                    <g transform="translate(0 206) scale(1 -1)">
+                        <circle cx="103.0"  cy="80.4"   r="3"/>
+                        <circle cx="83.0"   cy="69.5"   r="3"/>
+                        <circle cx="133.0"  cy="75.8"   r="3"/>
+                        <circle cx="93.0"   cy="88.1"   r="3"/>
+                        <circle cx="113.0"  cy="83.3"   r="3"/>
+                        <circle cx="143.0"  cy="99.6"   r="3"/>
+                        <circle cx="63.0"   cy="72.4"   r="3"/>
+                        <circle cx="43.0"   cy="42.6"   r="3"/>
+                        <circle cx="123.0"  cy="108.4"  r="3"/>
+                        <circle cx="73.0"   cy="48.2"   r="3"/>
+                        <circle cx="53.0"   cy="56.8"   r="3"/>
+                        <rect x="0.0"   y="0"       height="206.0"    width="206.0" class="frame"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
