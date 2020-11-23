@@ -5,7 +5,7 @@
 window.onload = changeData;
 
 // Add event listeners for changing data
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("dataset").addEventListener("change", changeData);
     document.getElementById("random").addEventListener("change", randomSubset);
 });
@@ -29,7 +29,7 @@ function update(error, data) {
         // We need to explicitly convert values
         // to numbers so that comparisons work
         // when we call d3.max()
-        data.forEach(function (d) {
+        data.forEach(function(d) {
             d.a = parseInt(d.a);
             d.b = parseFloat(d.b);
         });
@@ -42,12 +42,12 @@ function update(error, data) {
 
     // Set up the scales
     let aScale = d3.scaleLinear()
-        .domain([0, d3.max(data, function (d) {
+        .domain([0, d3.max(data, function(d) {
             return d.a;
         })])
         .range([0, h - 6]);
     let bScale = d3.scaleLinear()
-        .domain([0, d3.max(data, function (d) {
+        .domain([0, d3.max(data, function(d) {
             return d.b;
         })])
         .range([0, h - 6]);
@@ -73,16 +73,16 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", function (d, i) {
+        .attr("x", function(d, i) {
             return i * ((w - 5) / data.length) + 3;
         })
         .attr("y", 1)
-        .attr("height", function (d) {
+        .attr("height", function(d) {
             return aScale(d.a);
         })
         .attr("width", w / data.length - barPadding)
         .attr("class", "bar1")
-        .attr("id", function (d) {
+        .attr("id", function(d) {
             return "ID_a" + d.a;
         });
 
@@ -90,11 +90,11 @@ function update(error, data) {
     bc1.selectAll(".bar1")
         .data(data)
         .transition()
-        .attr("x", function (d, i) {
+        .attr("x", function(d, i) {
             return i * ((w - 5) / data.length) + 3;
         })
         .attr("y", 1)
-        .attr("height", function (d) {
+        .attr("height", function(d) {
             return aScale(d.a);
         })
         .attr("width", w / data.length - barPadding)
@@ -116,16 +116,16 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", function (d, i) {
+        .attr("x", function(d, i) {
             return i * ((w - 5) / data.length) + 3;
         })
         .attr("y", 1)
-        .attr("height", function (d) {
+        .attr("height", function(d) {
             return bScale(d.b);
         })
         .attr("width", w / data.length - barPadding)
         .attr("class", "bar2")
-        .attr("id", function (d) {
+        .attr("id", function(d) {
             return "ID_b" + d.b;
         });
 
@@ -133,11 +133,11 @@ function update(error, data) {
     bc2.selectAll(".bar2")
         .data(data)
         .transition()
-        .attr("x", function (d, i) {
+        .attr("x", function(d, i) {
             return i * ((w - 5) / data.length) + 3;
         })
         .attr("y", 1)
-        .attr("height", function (d) {
+        .attr("height", function(d) {
             return bScale(d.b);
         })
         .attr("width", w / data.length - barPadding)
@@ -145,10 +145,10 @@ function update(error, data) {
 
     // TODO: Select and update the 'a' line chart path using this line generator
     let aLineGenerator = d3.line()
-        .x(function (d, i) {
+        .x(function(d, i) {
             return iScale(i);
         })
-        .y(function (d) {
+        .y(function(d) {
             return aScale(d.a);
         });
 
@@ -181,10 +181,10 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return aScale(d.a);
         })
         .attr("r", 2)
@@ -200,10 +200,10 @@ function update(error, data) {
     lc1.selectAll(".circle1")
         .data(data)
         .transition()
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return aScale(d.a);
         })
         .attr("r", 2)
@@ -211,10 +211,10 @@ function update(error, data) {
 
     // TODO: Select and update the 'b' line chart path (create your own generator)
     let bLineGenerator = d3.line()
-        .x(function (d, i) {
+        .x(function(d, i) {
             return iScale(i);
         })
-        .y(function (d) {
+        .y(function(d) {
             return bScale(d.b);
         });
 
@@ -247,10 +247,10 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
@@ -266,10 +266,10 @@ function update(error, data) {
     lc2.selectAll(".circle2")
         .data(data)
         .transition()
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
@@ -277,11 +277,11 @@ function update(error, data) {
 
     // TODO: Select and update the 'a' area chart path using this line generator
     let aAreaGenerator = d3.area()
-        .x(function (d, i) {
+        .x(function(d, i) {
             return iScale(i);
         })
         .y0(0)
-        .y1(function (d) {
+        .y1(function(d) {
             return aScale(d.a);
         });
 
@@ -314,10 +314,10 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return aScale(d.a);
         })
         .attr("r", 2)
@@ -333,10 +333,10 @@ function update(error, data) {
     ac1.selectAll(".circle1")
         .data(data)
         .transition()
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return aScale(d.a);
         })
         .attr("r", 2)
@@ -344,11 +344,11 @@ function update(error, data) {
 
     // TODO: Select and update the 'b' area chart path (create your own generator)
     let bAreaGenerator = d3.area()
-        .x(function (d, i) {
+        .x(function(d, i) {
             return iScale(i);
         })
         .y0(0)
-        .y1(function (d) {
+        .y1(function(d) {
             return bScale(d.b);
         });
 
@@ -381,10 +381,10 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
@@ -400,10 +400,10 @@ function update(error, data) {
     ac2.selectAll(".circle2")
         .data(data)
         .transition()
-        .attr("cx", function (d, i) {
+        .attr("cx", function(d, i) {
             return iScale(i);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
@@ -425,15 +425,15 @@ function update(error, data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d) {
+        .attr("cx", function(d) {
             return aScale(d.a);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
         .attr("class", "circleSP")
-        .attr("id", function (d) {
+        .attr("id", function(d) {
             return "ID_a" + d.a + "ID_b" + d.b;
         });
 
@@ -441,10 +441,10 @@ function update(error, data) {
     sp.selectAll("circle")
         .data(data)
         .transition()
-        .attr("cx", function (d) {
+        .attr("cx", function(d) {
             return aScale(d.a);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function(d) {
             return bScale(d.b);
         })
         .attr("r", 2)
@@ -486,12 +486,12 @@ function update(error, data) {
     sp.selectAll(".circleSP")
         .data(data)
         .on("click", printCoordinates)
-        .on("mouseover", function (d) {
+        .on("mouseover", function(d) {
             showTooltip(d);
             highlightA(d);
             highlightB(d);
         })
-        .on("mouseout", function (d) {
+        .on("mouseout", function(d) {
             hideTooltip(d);
             defaultA(d);
             defaultB(d);
@@ -503,9 +503,8 @@ function changeData() {
     let dataFile = document.getElementById('dataset').value;
     if (document.getElementById('random').checked) {
         randomSubset();
-    }
-    else{
-        console.log("Data Set from file " + dataFile + " loaded." );
+    } else {
+        console.log("Data Set from file " + dataFile + " loaded.");
         d3.csv('./data/' + dataFile + '.csv', update);
     }
 }
@@ -517,9 +516,9 @@ function randomSubset() {
     let dataFile = document.getElementById('dataset').value;
     if (document.getElementById('random').checked) {
         console.log("Random Data Set created.");
-        d3.csv('./data/' + dataFile + '.csv', function (error, data) {
+        d3.csv('./data/' + dataFile + '.csv', function(error, data) {
             let subset = [];
-            data.forEach(function (d) {
+            data.forEach(function(d) {
                 if (Math.random() > 0.5) {
                     subset.push(d);
                 }
@@ -578,7 +577,7 @@ function highlightA(d) {
     d3.select("#bc1")
         .select("g")
         .selectAll(".bar1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "royalblue");
@@ -586,7 +585,7 @@ function highlightA(d) {
     d3.select("#lc1")
         .select("g")
         .selectAll(".circle1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "visible")
@@ -596,7 +595,7 @@ function highlightA(d) {
     d3.select("#ac1")
         .select("g")
         .selectAll(".circle1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "visible")
@@ -606,7 +605,7 @@ function highlightA(d) {
     d3.select("#sp")
         .select("g")
         .selectAll(".circleSP")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "royalblue")
@@ -619,7 +618,7 @@ function defaultA(d) {
     d3.select("#bc1")
         .select("g")
         .selectAll(".bar1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "");
@@ -627,7 +626,7 @@ function defaultA(d) {
     d3.select("#lc1")
         .select("g")
         .selectAll(".circle1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "")
@@ -637,7 +636,7 @@ function defaultA(d) {
     d3.select("#ac1")
         .select("g")
         .selectAll(".circle1")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "")
@@ -647,7 +646,7 @@ function defaultA(d) {
     d3.select("#sp")
         .select("g")
         .selectAll(".circleSP")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "")
@@ -659,7 +658,7 @@ function highlightB(d) {
     d3.select("#bc2")
         .select("g")
         .selectAll(".bar2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "royalblue");
@@ -667,7 +666,7 @@ function highlightB(d) {
     d3.select("#lc2")
         .select("g")
         .selectAll(".circle2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "visible")
@@ -677,7 +676,7 @@ function highlightB(d) {
     d3.select("#ac2")
         .select("g")
         .selectAll(".circle2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "visible")
@@ -687,7 +686,7 @@ function highlightB(d) {
     d3.select("#sp")
         .select("g")
         .selectAll(".circleSP")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "royalblue")
@@ -700,7 +699,7 @@ function defaultB(d) {
     d3.select("#bc2")
         .select("g")
         .selectAll(".bar2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "");
@@ -708,7 +707,7 @@ function defaultB(d) {
     d3.select("#lc2")
         .select("g")
         .selectAll(".circle2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "")
@@ -718,7 +717,7 @@ function defaultB(d) {
     d3.select("#ac2")
         .select("g")
         .selectAll(".circle2")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("visibility", "")
@@ -728,7 +727,7 @@ function defaultB(d) {
     d3.select("#sp")
         .select("g")
         .selectAll(".circleSP")
-        .filter(function (dd) {
+        .filter(function(dd) {
             return d === dd;
         })
         .style("fill", "")
