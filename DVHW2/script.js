@@ -55,7 +55,7 @@ function update(error, data) {
         .domain([0, data.length - 1])
         .range([3, w - 3]);
 
-    // ****** TODO: PART II (you will also edit in PART IV) ******
+    // TODO: PART II (you will also edit in PART IV)
 
     // TODO: Select and update the 'a' bar chart bars
     let bc1 = d3.select("#bc1")
@@ -450,7 +450,7 @@ function update(error, data) {
         .attr("r", 2)
         .attr("class", "circleSP");
 
-    // ****** TODO: PART III ******
+    // TODO: PART III
     // Highlight elements
     bc1.selectAll(".bar1")
         .data(data)
@@ -499,7 +499,7 @@ function update(error, data) {
 }
 
 function changeData() {
-    // // Load the file indicated by the select menu
+    // Load the file indicated by the select menu
     let dataFile = document.getElementById('dataset').value;
     if (document.getElementById('random').checked) {
         randomSubset();
